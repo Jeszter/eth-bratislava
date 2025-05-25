@@ -80,6 +80,15 @@ npm run start         # dev server http://localhost:3000
 
 ```bash
 cd backend
+
+
+
+
+![image](https://github.com/user-attachments/assets/6d423128-a164-4a8e-8a5c-f0c47f7d155c)
+
+
+![image](https://github.com/user-attachments/assets/f3161f2e-a247-431e-af51-3528088434f3)
+
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload  # Swagger at /docs
