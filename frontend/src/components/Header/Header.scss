@@ -1,0 +1,140 @@
+@use '../../styles/variables' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    border-bottom: 1px solid rgba(243, 242, 245, 0.1);
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+    }
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: $white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    transition: color 0.2s;
+
+    &:hover {
+        color: $secondary;
+    }
+
+    span {
+        color: $secondary;
+        margin-left: 4px;
+    }
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+
+    li a {
+        color: $gray;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 8px 0;
+        transition: all 0.2s;
+
+        &:hover {
+            color: $white;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $secondary;
+            transition: width 0.3s;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+
+        &.active {
+            color: $white;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.login-button,
+.logout-button {
+    background-color: transparent;
+    color: $white;
+    border: 1px solid $secondary;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: $secondary;
+        color: $primary;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+.profile-link {
+    color: $white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+
+    &:hover {
+        color: $secondary;
+    }
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+}
